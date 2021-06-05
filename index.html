@@ -1,0 +1,62 @@
+<html>
+
+<head>
+	<script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+  <title>Sign in</title>
+
+  <script>
+
+	var user="Ajla"
+	var pass = "123";
+	
+	
+	function validateUser()
+	{
+		var userName = document.getElementById("Username").value;
+		var password = document.getElementById("Password").value;
+	
+	if (userName == user && password==pass)
+	{
+		document.getElementById("button").onclick = function () {
+                        location.href = "WelcomePage.html";
+                    }
+	}
+	else
+	{
+		window.getElementById("error").innerHTML = "Pogresan password ili korisničko ime."
+	}
+	}
+	</script>
+  
+
+</head>
+
+<body>
+	<div class="container">
+		<div class="leftBox">
+			<h1 style="text-align:center;">Dobrodošli</h1>
+			<p style="text-align: center;">Molimo Vas da se logujete kako bi pristupili online glasanju.</p>
+			<center><img src="images/bih_zastavaa.jpg" height="170" width="200" alt="BiHFlag" class="imgBiH"></center>
+		</div>
+	  <div class="rightBox">
+		<h1 style="text-align:center;">User Login</h1>
+		<form class="form1">
+		  <input class="un" id="Username" type="text" align="center" placeholder="Username">
+		  <input class="pass" id="Password" type="password" align="center" placeholder="Password">
+		  
+
+		  <button  id ="button" class="submit" align="center">Loguj se</button>
+		  <div id="error"></div>
+		 
+		  <p class="forgot" align="center"><a href="#">Forgot Password?</p>       
+		</div>
+	</div>
+
+
+</body>
+
+</html>
