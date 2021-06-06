@@ -7,3 +7,8 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+Project for Introduction to Human-Computer interaction subject on International Burch University.
+Done by:
+Kenan Bektas
+Ajla Arnautovic

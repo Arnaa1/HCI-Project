@@ -128,8 +128,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
-            <p>Vec posjedujete account?? <a href="login.php">Prijavi se</a>.</p>
+            <p>Vec posjedujete account? <a href="login.php">Prijavi se</a>.</p>
         </form>
     </div>    
+    <style>
+    .button {
+      background-color: grey;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    </style>
+
+<button class="button" onclick="goBack()">Pocetna</button>
+
+<script>
+     function myFunction() {
+         location.replace("index.html")
+            }
+ </script>
+
 </body>
 </html>

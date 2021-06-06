@@ -125,5 +125,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <p>Ne posjedujete account? <a href="register.php">Registruj se</a>.</p>
         </form>
     </div>
+    <style>
+    .button {
+      background-color: grey;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    </style>
+
+<button class="button" onclick="goBack()">Pocetna</button>
+
+<script>
+     function myFunction() {
+         location.replace("index.html")
+            }
+ </script>
 </body>
 </html>

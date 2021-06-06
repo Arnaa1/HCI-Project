@@ -149,6 +149,32 @@ html {
         </script>
 
         <a href="logout.php" class="btn btn-danger ml-3">Odjavi se</a>
+    <style>
+      .button1 {
+      background-color: grey;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    </style>
+
+<button class="button1" onclick="goBack()">Idi nazad</button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+
+</script>
         
 </body>
 </html>
