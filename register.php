@@ -100,11 +100,60 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Registruj se</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
-    </style>
+        body{ 
+            font: 14px sans-serif; 
+            background-image: url('images/landing.png');
+             height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+        
+         
+        .wrapper{ 
+            width: 360px; padding: 20px; 
+            }
+        
+        .box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        }
+
+     
+    #button {
+      background-color: rgb(54, 14, 148);
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+</style>
+  
 </head>
 <body>
+
+<button id="button">Početna</button>
+
+<script type="text/javascript">
+    document.getElementById("button").onclick = function () {
+        window.location='index.html';
+    };
+</script>
+
+    <div class="box">
+
+    
+
     <div class="wrapper">
         <h2>Registruj se</h2>
         <p>Molimo popunite polja za registraciju.</p>
@@ -125,37 +174,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Submit">
-                <input type="reset" class="btn btn-secondary ml-2" value="Reset">
+                <input type="submit" class="btn btn-primary" value="Submit" style="background-color: rgb(54, 14, 148);" >
+                <input type="reset" class="btn btn-secondary ml-2" value="Reset" style="background-color: rgb(54, 14, 148);" >
             </div>
             <p>Vec posjedujete account? <a href="login.php">Prijavi se</a>.</p>
         </form>
     </div>    
-    <style>
-    .button {
-      background-color: grey;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    </style>
+</div>
 
-<button class="button" onclick="goBack()">Pocetna</button>
-
-<script>
-     function myFunction() {
-         location.replace("index.html")
-            }
- </script>
 
 </body>
 </html>

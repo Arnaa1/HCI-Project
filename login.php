@@ -93,62 +93,87 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <title>Prijava</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+
+        body{ 
+            font: 14px sans-serif; 
+            font: 14px sans-serif; 
+            background-image: url('images/landing.png');
+             height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .wrapper{ 
+            width: 360px; padding: 20px; 
+            }
+
+        #button1 {
+        background-color: rgb(54, 14, 148);
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        }
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <h2>Prijava</h2>
-        <p>Molimo popunite polja za prijavu.</p>
 
-        <?php 
-        if(!empty($login_err)){
-            echo '<div class="alert alert-danger">' . $login_err . '</div>';
-        }        
-        ?>
+        <button id="button1">Početna</button>
 
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
-            </div>    
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                <span class="invalid-feedback"><?php echo $password_err; ?></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary" value="Login">
-            </div>
-            <p>Ne posjedujete account? <a href="register.php">Registruj se</a>.</p>
-        </form>
+        <script type="text/javascript">
+            document.getElementById("button1").onclick = function () {
+                window.location='index.html';
+            };
+        </script>
+
+
+    <div class="container">
+        <div class="wrapper">
+            <h2>Prijava</h2>
+            <p>Molimo popunite polja za prijavu.</p>
+
+            <?php 
+            if(!empty($login_err)){
+                echo '<div class="alert alert-danger">' . $login_err . '</div>';
+            }        
+            ?>
+
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                </div>    
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="btn btn-primary" value="Login" style="background-color: rgb(54, 14, 148);">
+                </div>
+                <p>Ne posjedujete account? <a href="register.php">Registruj se</a>.</p>
+            </form>
+        </div>
     </div>
-    <style>
-    .button {
-      background-color: grey;
-      border: none;
-      color: white;
-      padding: 15px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-    </style>
+    
 
-<button class="button" onclick="goBack()">Pocetna</button>
 
-<script>
-     function myFunction() {
-         location.replace("index.html")
-            }
- </script>
 </body>
 </html>
