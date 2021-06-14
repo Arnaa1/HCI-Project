@@ -1,83 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
+.menu-btn {
+   background-color: #7e32d4;
+   color: white;
+   padding: 16px;
+   font-size: 20px;
+   font-weight: bolder;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   border: none;
 }
-
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
+.dropdown-menu {
+   position: relative;
+   display: inline-block;
 }
-
-.dropdown {
-  position: relative;
-  display: inline-block;
+.menu-content {
+   display: none;
+   position: absolute;
+   background-color: #017575;
+   min-width: 160px;
+   z-index: 1;
 }
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  overflow: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+.links {
+   color: rgb(255, 255, 255);
+   padding: 12px 16px;
+   text-decoration: none;
+   display: block;
+   font-size: 18px;
+   font-weight: bold;
+   border-bottom: 1px solid black;
 }
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+.links:hover {
+   background-color: rgb(8, 107, 46);
 }
-
-.dropdown a:hover {background-color: #ddd;}
-
-.show {display: block;}
+.dropdown-menu:hover .menu-btn {
+   background-color: #3e8e41;
+}
 </style>
 </head>
 <body>
-
-<h2>Izaberite kandidata!</h2>
-<p>Da biste izabrali kandidata potrebno je da kliknete na dugme "Kandidati".</p>
-
-<div class="dropdown">
-  <button onclick="myFunction()" class="dropbtn">Kandidati</button>
-  <div id="myDropdown" class="dropdown-content">
-    <a >Milorad Dodik</a>
-    <a >Bakir Izetbegovic</a>
-    <a >Samed Jukic</a>
-  </div>
-</div>
-
-<script>
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+  <script>
+    function Glasanje() {
+      alert("Uspjesno ste glasali!");
     }
-  }
-}
+   </script>
+<h2>Da biste izabrali kandidata potrebno je da kliknete na dugme "Kandidati".</h2>
+<div class="dropdown-menu">
+<button class="menu-btn">Kandidati</button>
+<div class="menu-content">
+<a class="links" onClick="Glasanje()">Samed Jukic</a>
+<a class="links" onClick="Glasanje()">Milorad Dodik</a>
+<a class="links" onClick="Glasanje()">Bakir Izetbegovic</a>
+</div>
+</div>
+<script>
+let dropdownBtn = document.querySelector('.menu-btn');
+let menuContent = document.querySelector('.menu-content');
+dropdownBtn.addEventListener('click',()=>{
+   if(menuContent.style.display===""){
+      menuContent.style.display="block";
+   } else {
+      menuContent.style.display="";
+   }
+})
 </script>
+
 <style>
     .button {
       background-color: grey;

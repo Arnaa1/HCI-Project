@@ -103,6 +103,7 @@ html {
 
 <h2 style="text-align:center">Podrska</h2>
 
+<div class="container">
 <div class="row">
   <div class="column">
     <div class="card">
@@ -123,6 +124,7 @@ html {
       </div>
     </div>
   </div>
+</div>
 </div>
   <p>
         
