@@ -17,16 +17,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; text-align: center; }
-    </style>
-</head>
-<body>
-    <h1 class="my-5">Zdravo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Dobrodosli na online glasanje.</h1>
-
-    <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
+        body {
+          font: 14px sans-serif; 
+          font: 14px sans-serif;          
+          background-image: url('images/landing.png');
+          height: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
 
 html {
   box-sizing: border-box;
@@ -51,7 +50,7 @@ html {
 .about-section {
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
+  background-color: #360e94;
   color: white;
 }
 
@@ -59,17 +58,14 @@ html {
   padding: 0 16px;
 }
 
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 
 .title {
   color: grey;
 }
 
 .button {
+
   border: none;
   outline: 0;
   display: inline-block;
@@ -91,69 +87,8 @@ html {
     display: block;
   }
 }
-</style>
-</head>
-<body>
-
-<div class="about-section">
-  <h1>Uslovi koristenja</h1>
-  <p>Nakon odabira opcije "Dalje" dobijate mogucnost biranja kandidata klikom na ponudjeni meni.</p>
-  <p>Sa Vase desne strane ce se nalaziti statistika trenutnog broja glasova prikazanih u postotcima.</p>
-</div>
-
-<h2 style="text-align:center">Podrska</h2>
-
-<div class="container">
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <div class="container">
-        <h2>Kenan Bektas</h2>
-        <p class="title">CEO & Founder</p>
-        <p>kenan.bektas@stu.ibu.edu.ba</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="column">
-    <div class="card">
-      <div class="container">
-        <h2>Ajla Arnautovic</h2>
-        <p class="title">CEO & Founder</p>
-        <p>ajla.arnautovic@stu.ibu.edu.ba</p>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-  <p>
-        
-    </p>
-    <style>
-            .button {
-              background-color: grey;
-              border: none;
-              color: white;
-              padding: 15px 32px;
-              text-align: center;
-              text-decoration: none;
-              display: inline-block;
-              font-size: 16px;
-              margin: 4px 2px;
-              cursor: pointer;
-            }
-            </style>
-        <center><button class="button" onclick="myFunction()">Dalje--></button></center>
-        <script>
-            function myFunction() {
-              location.replace("vote.html")
-            }
-        </script>
-
-        <a href="logout.php" class="btn btn-danger ml-3">Odjavi se</a>
-    <style>
       .button1 {
-      background-color: grey;
+      background-color: rgb(54, 14, 148);
       border: none;
       color: white;
       padding: 15px 32px;
@@ -167,7 +102,53 @@ html {
       top: 0;
       right: 0;
     }
+
+    .button {
+              background-color: #360e94;
+              border: none;
+              color: white;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+            }
     </style>
+</head>
+<body>
+    <h1 class="my-5" style="color:rgb(54, 14, 148);">Zdravo, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Dobrodošli na online glasanje.</h1>
+
+
+<body>
+
+<div class="about-section">
+  <h1 style="color:yellow;">Uslovi korištenja</h1>
+  <p style="color:yellow;">Nakon odabira opcije "Dalje" dobijate mogućnost biranja kandidata klikom na ponuđeni meni.</p>
+  <p style="color:yellow;">Sa Vaše desne strane ce se nalaziti statistika trenutnog broja glasova prikazanih u postotcima.</p>
+</div>
+
+<h2 style="text-align:center; color:rgb(54, 14, 148);">Podrška</h2>
+
+<div class="container">
+
+  <img src="images/Screenshot_1.jpg"> 
+
+</div>
+  <p>
+        
+    </p>
+
+        <center><button class="button" style="#360e94" onclick="myFunction()">Dalje--></button></center>
+        <script>
+            function myFunction() {
+              location.replace("vote.html")
+            }
+        </script>
+
+        <a href="logout.php" class="btn btn-danger ml-3">Odjavi se</a>
+    
 
 <button class="button1" onclick="goBack()">Idi nazad</button>
 

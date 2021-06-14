@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online rezultati</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{ 
+            font: 14px sans-serif; 
+            background-image: url('images/landing.png');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:100%
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color:#360e94;
+            }
+
+        li {
+        float: left;
+        }
+
+        li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        }
+
+        li a:hover {
+        background-color:#ffd004;
+        }
+
+       
+        
+        p {
+        text-align: center;
+        font-size: 60px;
+        margin-top: 0px;
+        border-style:solid;
+            border-color:#287EC7;
+        }
+
+        .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="box">
+        <div>
+            <ul>
+                <li><a class="active" href="vote.html">Glasaj</a></li>
+                <li><a href="onlineResults.html">Online rezultati</a></li>
+                <li><a href="aboutCandidates.html">O kandidatima</a></li>
+                <li><a href="rules.html">Uputstvo za glasanje</a></li>
+              </ul>
+        </div>
+    </div>
+
+    <div clas="counting">
+        <p id="demo"></p>
+    </div>
+
+   
+        <div>
+            <img src="images/Screenshot_2.jpg" class="center"> 
+        </div>
+
+
+    
+    
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jun 15, 2021 15:37:25").getTime();        
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+          // Get today's date and time
+          var now = new Date().getTime();
+          // Find the distance between now and the count down date
+          var distance = countDownDate - now;
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          // Output the result in an element with id="demo"
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+          // If the count down is over, write some text 
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "GLASANJE ZAVRŠENO";
+          }
+        }, 1000);
+        </script>
+
+
+
+
+</body>
+</html>
