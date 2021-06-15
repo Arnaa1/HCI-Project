@@ -1,8 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
 <style>
+
+body{ font: 14px sans-serif; text-align: center; }
+  body {
+      font: 14px sans-serif; 
+      font: 14px sans-serif;          
+      background-image: url('images/landing.png');
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;    
+      background-size: cover;    
+     }   
+      
+
 .menu-btn {
    background-color: #7e32d4;
    color: white;
@@ -38,36 +52,8 @@
 .dropdown-menu:hover .menu-btn {
    background-color: #3e8e41;
 }
-</style>
-</head>
-<body>
-  <script>
-    function Glasanje() {
-      alert("Uspjesno ste glasali!");
-    }
-   </script>
-<h2>Da biste izabrali kandidata potrebno je da kliknete na dugme "Kandidati".</h2>
-<div class="dropdown-menu">
-<button class="menu-btn">Kandidati</button>
-<div class="menu-content">
-<a class="links" onClick="Glasanje()">Samed Jukic</a>
-<a class="links" onClick="Glasanje()">Milorad Dodik</a>
-<a class="links" onClick="Glasanje()">Bakir Izetbegovic</a>
-</div>
-</div>
-<script>
-let dropdownBtn = document.querySelector('.menu-btn');
-let menuContent = document.querySelector('.menu-content');
-dropdownBtn.addEventListener('click',()=>{
-   if(menuContent.style.display===""){
-      menuContent.style.display="block";
-   } else {
-      menuContent.style.display="";
-   }
-})
-</script>
 
-<style>
+
     .button {
       background-color: grey;
       border: none;
@@ -83,48 +69,78 @@ dropdownBtn.addEventListener('click',()=>{
       top: 0;
       right: 0;
     }
-    </style>
+
+
+#sample {margin-top: 15%;}
+#sample h2 {text-align:center;}
+#sample p {text-align:center;padding:.4em 3em 0em;color:#000000;}
+#my-form {box-sizing:border-box;margin:0 auto;padding-left:6em;text-align:left;width:70%;color:#0a1e77;}
+#my-form label {color:#000000;}
+#my-form .data-entry {padding:.5em 8%;}
+#my-form textarea {padding:.1em 8%;}
+#my-form p {text-align:left;margin:0;padding:1em 0 .1em;}
+#my-form select {margin-bottom:1em;font-size:95%;padding:.1em .5em;}
+#my-form .button {width:80px;height:30px;font-size:110%;margin:.4em;}
+#my-form .radio {white-space:nowrap;display:inline-block;line-height:2em;margin:.1em 0;}
+#my-form input[type=radio]{margin-right:.6em;}
+
+</style>
+</head>
+<body>
+
+
+
+  
+
+
+<div id="sample">
+   <h2>Da biste izabrali kandidata potrebno je da kliknete na dugme pored imena kandidata.</h2>
+   <form id="my-form">
+   <div id="align">
+   <p>ODABERITE KANDIDATA:</p><br />
+   <span class="radio"><input type="radio" name="candidate"  />Mirsad Hadžikadić</span><br />
+   <span class="radio"><input type="radio" name="candidate" />Fahrudin Radončić</span><br />
+   <span class="radio"><input type="radio" name="candidate"  />Dragan Čović</span><br />
+   <span class="radio"><input type="radio" name="candidate"  />Željko Komšić</span><br />
+   <span class="radio"><input type="radio" name="candidate"  />Milorad Dodik</span><br /><br />
+   
+   <label for="comments3">COMMENTS:</label><br />
+   <span><textarea name="comments" id="comments3" rows="4" ></textarea></span><br /><br />
+   
+   <span><input type="reset" class="button" value="RESET" />
+   <input type="submit" class="button" value="SUBMIT" /></span><br />
+
+   <button id="alertButton" onclick="Glasanje()" style=" height: 30px;" >GLASAJ</button>
+   
+   </div><!--end div align-->
+   </form>
+   
+</div><!--end div sample-->
+
+
+
+<script>
+   function Glasanje() {
+      window.alert("Uspjesno ste glasali!");  
+   }
+  </script>
+
 
 <button class="button" onclick="goBack()">Idi nazad</button>
-
 <script>
 function goBack() {
    window.location='welcome.php';
 }
-
 </script>
 
+
+
 <br></br>
 <br></br>
 <br></br>
 <br></br>
 
-<div id="piechart"></div>
 
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-<script type="text/javascript">
-// Load google charts
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Kandidat', 'Broj glasova'],
-  ['Samed Jukic', 8],
-  ['Milorad Dodik', 2],
-  ['Bakir Izetbegovic', 2]
-]);
-
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Trenutna statistika kandidata', 'width':700, 'height':500};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
-</script>
 
 </body>
 </html>
